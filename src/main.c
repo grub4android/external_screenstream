@@ -90,7 +90,7 @@ int main(int argc, char** argv)
 
 	while(info.running) {
 		// make screenshot
-		system("timeout 1 /media/Data/repositories/git/bigG/build/tools/take_screenshot /tmp/screen.png");
+		if(system("timeout 1 ./build/tools/take_screenshot /tmp/screen.png")) continue;
 
 		// load image
 		SDL_Surface* bmp = IMG_Load("/tmp/screen.png");
